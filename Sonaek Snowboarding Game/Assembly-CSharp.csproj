@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player -- Christian Sadykbayev\Player.cs" />
      <Compile Include="Assets\Scripts\Player -- Christian Sadykbayev\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\PointSys -- Ben\PointSystem.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
