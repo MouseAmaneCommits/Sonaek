@@ -4,6 +4,34 @@ using UnityEngine.Scripting;
 using UnityEngine;
 using UnityEditor.Timeline;
 
+<<<<<<< Updated upstream
+=======
+public enum TrickType
+{
+    Frontside180,
+    Backside180
+}
+
+public enum TrickDirection
+{
+    Frontside,
+    Backside
+}
+
+public enum Stances
+{
+    Regular,
+    Goofy
+}
+
+public enum StancesRelative
+{
+    Regular,
+    Switch,
+    Fakie
+}
+
+>>>>>>> Stashed changes
 // LAST EDITED ---- Christian Sadykbayev
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,12 +45,28 @@ public class PlayerMovement : MonoBehaviour
     public float airDrag; // The player drag will be set to this number if the player is in the air
     public float groundDrag; // The player drag will be set to this number if the player is on the ground
     public float powerslideDrag; // The player drag will be set to this number when the player is powersliding
+    public float rotationSpeed; // This is the speed in which the upper body will rotate for 180s and stuff
 
+<<<<<<< Updated upstream
     private float xRotation; // dont worry about this
     private float MaxVelocity = 65; // The max velocity the player can go
     private bool inAir; // If the player is in the air
     private bool isPowersliding; // If the player is powersliding bool is true
     public LayerMask GroundLayerFaggot; // Incase you want to get the ground layer idk
+=======
+    public LayerMask GroundLayerFaggot; // Incase you want to get the ground layer idk
+    public float jumpHeight; // The height you can jump on your board!
+    public float groundDistance; // The max distance the ground has to be for the game to register the snowboarder to be on the ground
+
+    public GameManager gameManager;
+    public Vector3 snowboardCenterOfGravity; // The center of gravity of the snowboard
+    public Stances stanceOfSnowboarder; // The stance of the snowboarder
+
+    private float MaxVelocity = 65; // The max velocity the player can go
+    private bool inAir; // If the player is in the air
+    private bool isPowersliding; // If the player is powersliding bool is true
+    private StancesRelative relativeStance = StancesRelative.Regular;
+>>>>>>> Stashed changes
 
     void Start()
     {
@@ -50,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (hit == true) //Check if player hit ground FROM raycast (can be buggyish, might revamp later)
         {
+<<<<<<< Updated upstream
             print("YOUR HITTING THE GROUND");
             player.constraints = RigidbodyConstraints.None; //Resets constraints of rotation axises
 
@@ -65,6 +110,47 @@ public class PlayerMovement : MonoBehaviour
             inAir = true;
         } 
 
+=======
+            //Debug.Log("YOUR HITTING THE GROUND");
+        }
+        else
+        {
+            //Debug.Log("You're in the air");
+        } 
+
+        if (inAir)
+        {
+            player.drag = airDrag;
+        }
+        else if (!inAir && isPowersliding)
+        {
+            player.drag = powerslideDrag;
+        }
+        else if (!inAir)
+        {
+            player.drag = groundDrag;
+        }
+
+        Keybinds();
+    }
+
+    public void Jump()
+    {
+        player.AddForce(Vector3.up * jumpHeight * Time.deltaTime);
+    }
+
+    void Keybinds()
+    {
+        if (Input.GetKey(KeyCode.Space) && !inAir)
+        {
+            Jump();
+        }
+        else if (Input.GetKey(KeyCode.D) && !inAir)
+        {
+            GetComponent<TrickSystem>().GetTrick(TrickType.Frontside180).DoTrick();
+        }
+
+>>>>>>> Stashed changes
         // Move Forward
         if (Input.GetKey(KeyCode.W) && !inAir)
         {
@@ -74,19 +160,6 @@ public class PlayerMovement : MonoBehaviour
             }
 
             player.AddForce(player.transform.forward * speed * Time.deltaTime);
-        }
-
-        // Alternative way of Turning (NOT mouse controlled)
-        if (Input.GetKey(KeyCode.A))
-        {
-            player.AddForce(player.transform.right * turnspeed * Time.deltaTime);
-            player.transform.Rotate(0, -turnspeed, 0 * Time.deltaTime);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            player.AddForce(player.transform.right * turnspeed * Time.deltaTime);
-            player.transform.Rotate(0, turnspeed, 0 * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.S) && !inAir)
