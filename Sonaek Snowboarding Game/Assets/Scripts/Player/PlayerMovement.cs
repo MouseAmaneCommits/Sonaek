@@ -22,8 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private float MaxVelocity = 65; // The max velocity the player can go
     private bool inAir; // If the player is in the air
     private bool isPowersliding; // If the player is powersliding bool is true
-
-
+    public LayerMask GroundLayerFaggot; // Incase you want to get the ground layer idk
 
     void Start()
     {
@@ -47,23 +46,24 @@ public class PlayerMovement : MonoBehaviour
         bool hit = Physics.Raycast(snowboardRef.transform.position, Vector3.down, 1);
         Debug.DrawRay(snowboardRef.transform.position, Vector3.down, Color.red, 1);
         player.velocity = Vector3.ClampMagnitude(player.velocity, MaxVelocity);
+        // transform.up = hit.normal;
 
-        if (hit == true)
+        if (hit == true) //Check if player hit ground FROM raycast (can be buggyish, might revamp later)
         {
             print("YOUR HITTING THE GROUND");
-            player.constraints = RigidbodyConstraints.None;
+            player.constraints = RigidbodyConstraints.None; //Resets constraints of rotation axises
 
             inAir = false;
         }
         else
         {
             print("You're in the air");
-            transform.position = transform.position -= new Vector3(0, 5f) * Time.deltaTime;
-            player.constraints = RigidbodyConstraints.FreezeRotation;
-            player.rotation.SetEulerAngles(0, 0, 0);
-
+            transform.position = transform.position -= new Vector3(0, 4.8f) * Time.deltaTime;
+            player.constraints = RigidbodyConstraints.FreezeRotationX; //Important for not flipping in air
+            player.constraints = RigidbodyConstraints.FreezeRotationZ; //Important for not flipping in air
+            // player.rotation.SetEulerAngles(0, 0, 0);
             inAir = true;
-        }
+        } 
 
         // Move Forward
         if (Input.GetKey(KeyCode.W) && !inAir)

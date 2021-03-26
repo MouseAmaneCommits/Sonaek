@@ -2028,13 +2028,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1814261696}
   snowboardRef: {fileID: 1136598824}
-  slowDownSpeed: 2
-  speedOfSnowboarder: 1000
+  slowDownSpeed: 10
+  speedOfSnowboarder: 10000
   turnspeed: 1
   animator: {fileID: 23934971}
   airDrag: 0.5
   groundDrag: 0
   powerslideDrag: 0.8
+  GroundLayerFaggot:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!54 &1814261696
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2049,7 +2052,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &1814261697
 MonoBehaviour:
@@ -2314,7 +2317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059789766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5102487, y: 1.196, z: 1.1760162}
+  m_LocalPosition: {x: 2.5102673, y: 1.196, z: 1.1760162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405591765}
@@ -2774,7 +2777,7 @@ GameObject:
   - component: {fileID: 2131354580}
   - component: {fileID: 2131354579}
   - component: {fileID: 2131354578}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
