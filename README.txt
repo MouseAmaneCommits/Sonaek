@@ -1,4 +1,5 @@
-Sonaek Snowboarding Game
+# Sonaek Snowboarding Game
+Developers : UltraMadMan (Ultra), IanBotashev, Chris-Chan-Commits
 
 Ask developers if you want the code from this project (License)
 
