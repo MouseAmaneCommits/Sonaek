@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     public float groundDrag; // The player drag will be set to this number if the player is on the ground
     public float powerslideDrag; // The player drag will be set to this number when the player is powersliding
 
-    private float xRotation; // dont worry about this
     private float MaxVelocity = 65; // The max velocity the player can go
     private bool inAir; // If the player is in the air
     private bool isPowersliding; // If the player is powersliding bool is true
@@ -42,36 +41,58 @@ public class PlayerMovement : MonoBehaviour
         rg.velocity = Vector3.zero;
         rg.angularVelocity = Vector3.zero;
     }
+    
+    bool isGrounded()
+    {
+        bool hit = Physics.CheckSphere(snowboardRef.transform.position, groundDistance, GroundLayerFaggot, QueryTriggerInteraction.Collide);
+        Debug.DrawRay(snowboardRef.transform.position, Vector3.down, Color.red, 1);
+
+        return hit;
+    }
 
     void Update()
     {
-        //bool hit = Physics.Raycast(snowboardRef.transform.position, Vector3.down, groundDistance);
-        bool hit = Physics.CheckSphere(snowboardRef.transform.position, groundDistance, GroundLayerFaggot, QueryTriggerInteraction.Collide);
-        Debug.DrawRay(snowboardRef.transform.position, Vector3.down, Color.red, 1);
-        player.velocity = Vector3.ClampMagnitude(player.velocity, MaxVelocity);
-        // transform.up = hit.normal;
+        inAir = !isGrounded();
 
-        if (hit == true) //Check if player hit ground FROM raycast (can be buggyish, might revamp later)
+        // Clamp player speed
+        player.velocity = Vector3.ClampMagnitude(player.velocity, MaxVelocity);
+
+        //Check if player hit ground FROM raycast (can be buggyish, might revamp later)
+        if (!inAir)
         {
             Debug.Log("YOUR HITTING THE GROUND");
-            //player.constraints = RigidbodyConstraints.None; //Resets constraints of rotation axises
-
-            inAir = false;
         }
         else
         {
             Debug.Log("You're in the air");
-            transform.position -= new Vector3(0, 4.8f) * Time.deltaTime;
-            //player.constraints = RigidbodyConstraints.FreezeRotationX; //Important for not flipping in air
-            //player.constraints = RigidbodyConstraints.FreezeRotationZ; //Important for not flipping in air
-            // player.rotation.SetEulerAngles(0, 0, 0);
-            inAir = true;
         } 
 
+        if (inAir)
+        {
+            player.drag = airDrag;
+        }
+        else if (!inAir && isPowersliding)
+        {
+            player.drag = powerslideDrag;
+        }
+        else if (!inAir)
+        {
+            player.drag = groundDrag;
+        }
+
+        Keybinds();
+    }
+
+    void Keybinds()
+    {
+        if (Input.GetKey(KeyCode.Space) && !inAir)
+        {
+            player.AddForce(Vector3.up * jumpHeight * Time.deltaTime);
+        }
         // Move Forward
         if (Input.GetKey(KeyCode.W) && !inAir && !isPowersliding)
         {
-            if(player.GetRelativePointVelocity(player.transform.forward).z <= 0)
+            if (player.GetRelativePointVelocity(player.transform.forward).z <= 0)
             {
                 speed = 1000;
             }
@@ -96,38 +117,14 @@ public class PlayerMovement : MonoBehaviour
         {
             // Set powersliding to true
             isPowersliding = true;
-
-            // INSERT ANIMATION HERE
             animator.SetBool("Powerslide", true);
-            // !INSERT ANIMATION HERE
         }
 
         else if (Input.GetKeyUp(KeyCode.S))
         {
             // Set powersliding to false
             isPowersliding = false;
-
-            // INSERT ANIMATION HERE
             animator.SetBool("Powerslide", false);
-            // !INSERT ANIMATION HERE
-        }
-
-        if (inAir)
-        {
-            player.drag = airDrag;
-        }
-        else if (!inAir && isPowersliding)
-        {
-            player.drag = powerslideDrag;
-        }
-        else if (!inAir)
-        {
-            player.drag = groundDrag;
-        }
-
-        if(Input.GetKey(KeyCode.Space) && !inAir)
-        {
-            player.AddForce(Vector3.up * jumpHeight * Time.deltaTime);
         }
     }
 }
