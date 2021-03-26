@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+// LAST EDITED : Benjamin S
 public class PointSystem : MonoBehaviour
 {
     public Text CounterRef;
@@ -13,12 +14,12 @@ public class PointSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Points = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        CounterRef.text = "Points: " + Points;
+        CounterRef.text = Points.ToString("Points: " + Points);
     }
 }
