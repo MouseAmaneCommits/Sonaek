@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 475, y: 321}
   m_MaxSize: {x: 8001, y: 8021}
   vertical: 0
-  controlID: 16147
+  controlID: 691
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 321}
   m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
-  controlID: 16125
+  controlID: 692
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -207,9 +207,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 8.87045, y: -5.9418497, z: 33.90199}
+    m_Target: {x: -3.5546887, y: -14.210892, z: 33.365246}
     speed: 2
-    m_Value: {x: 8.87045, y: -5.9418497, z: 33.90199}
+    m_Value: {x: -3.5546887, y: -14.210892, z: 33.365246}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -255,9 +255,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.15349121, y: 0.1638323, z: -0.025779687, w: 0.9741636}
+    m_Target: {x: 0.28861225, y: 0.0058650346, z: -0.0017147439, w: 0.95746213}
     speed: 2
-    m_Value: {x: 0.15348662, y: 0.1638274, z: -0.025778916, w: 0.97413445}
+    m_Value: {x: 0.28860244, y: 0.0058648353, z: -0.0017146857, w: 0.9574296}
   m_Size:
     m_Target: 24.001455
     speed: 2
@@ -367,7 +367,7 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 13}
   m_Selected: 1
-  m_LastSelected: 2
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -407,20 +407,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/PointSys -- Ben-Christian
+    - Assets/Scripts/Player -- Christian Sadykbayev
   m_ViewMode: 1
   m_StartGridSize: 52
   m_LastFolders:
-  - Assets/Scripts/PointSys -- Ben-Christian
+  - Assets/Scripts/Player -- Christian Sadykbayev
   m_LastFoldersGridSize: 52
   m_LastProjectPath: C:\Users\Eva\Documents\GitHub\Sonaek\Sonaek Snowboarding Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 22480000
-    m_LastClickedID: 18466
-    m_ExpandedIDs: 00000000b4450000
+    m_SelectedIDs: 6e450000
+    m_LastClickedID: 17774
+    m_ExpandedIDs: 0000000024450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -448,7 +448,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b4450000
+    m_ExpandedIDs: 0000000024450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -473,8 +473,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ba440000
-    m_LastClickedInstanceID: 17594
+    m_SelectedInstanceIDs: f0390000
+    m_LastClickedInstanceID: 14832
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300000000000074450000964900004491000010480000
     m_RenameOverlay:
@@ -535,7 +535,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a6f6ffffd444000024450000
+      m_ExpandedIDs: 68fbffff42440000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 17700
+  m_LastSelectedObjectID: 17474
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -740,5 +740,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 17700
+  m_LastInspectedObjectInstanceID: 17474
   m_LastVerticalScrollValue: 0
