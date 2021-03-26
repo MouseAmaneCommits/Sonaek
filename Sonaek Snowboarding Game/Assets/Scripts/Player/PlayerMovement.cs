@@ -4,7 +4,7 @@ using UnityEngine.Scripting;
 using UnityEngine;
 using UnityEditor.Timeline;
 
-// LAST EDITED ---- Christian Sadykbayev
+// LAST EDITED ---- Ian Botashev
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody player; // This is a reference to the player's rigidbody
@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isPowersliding; // If the player is powersliding bool is true
     public LayerMask GroundLayerFaggot; // Incase you want to get the ground layer idk
 
+    public GameManager gameManager;
+
     void Start()
     {
         speed = speedOfSnowboarder;
@@ -42,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         bool hit = Physics.Raycast(snowboardRef.transform.position, Vector3.down, 1);
         Debug.DrawRay(snowboardRef.transform.position, Vector3.down, Color.red, 1);
         player.velocity = Vector3.ClampMagnitude(player.velocity, MaxVelocity);

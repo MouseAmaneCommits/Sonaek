@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-// Last Edited: Christian Sadykbayev
+// Last Edited: Ian Botashev
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity;
     public Transform playerBody;
-
-    private float xRotation = 0f;
+    public GameManager gameManager;
 
     void Start()
     {
@@ -20,7 +19,6 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
