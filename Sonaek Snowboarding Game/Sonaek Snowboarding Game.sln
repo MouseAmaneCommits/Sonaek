@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.HighDefinition.Config.Runtime", "Unity.RenderPipelines.HighDefinition.Config.Runtime.csproj", "{7CE7944B-9432-1B17-7DC3-988C16591173}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{C36F12F7-2494-0071-C285-11BFDEFD234C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{1EC4BA00-A3C8-B938-4CBD-D8E0D2367577}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CE7944B-9432-1B17-7DC3-988C16591173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CE7944B-9432-1B17-7DC3-988C16591173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CE7944B-9432-1B17-7DC3-988C16591173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CE7944B-9432-1B17-7DC3-988C16591173}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C36F12F7-2494-0071-C285-11BFDEFD234C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C36F12F7-2494-0071-C285-11BFDEFD234C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C36F12F7-2494-0071-C285-11BFDEFD234C}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         } 
 
         // Move Forward
-        if (Input.GetKey(KeyCode.W) && !inAir)
+        if (Input.GetKey(KeyCode.W) && !inAir && !isPowersliding)
         {
             if(player.GetRelativePointVelocity(player.transform.forward).z <= 0)
             {
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
             // !INSERT ANIMATION HERE
         }
 
-        if (Input.GetKeyUp(KeyCode.S) && !inAir)
+        else if (Input.GetKeyUp(KeyCode.S))
         {
             // Set powersliding to false
             isPowersliding = false;
@@ -109,15 +109,15 @@ public class PlayerMovement : MonoBehaviour
             // !INSERT ANIMATION HERE
         }
 
-        if(inAir)
+        if (inAir)
         {
             player.drag = airDrag;
         }
-        else if(!inAir && isPowersliding)
+        else if (!inAir && isPowersliding)
         {
             player.drag = powerslideDrag;
         }
-        else if(!inAir)
+        else if (!inAir)
         {
             player.drag = groundDrag;
         }
