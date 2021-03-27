@@ -11,6 +11,7 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity;
     public Transform playerBody;
     public GameManager gameManager;
+    public PlayerMovement playerMovement;
 
     void Start()
     {
@@ -23,5 +24,10 @@ public class MouseLook : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         playerBody.Rotate(Vector3.up * mouseX);
+
+        if (!playerMovement.isGrounded())
+        {
+            playerBody.Rotate(Vector3.left * mouseY);
+        }
     }
 }
