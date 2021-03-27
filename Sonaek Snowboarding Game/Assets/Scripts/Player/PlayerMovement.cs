@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         rg.angularVelocity = Vector3.zero;
     }
     
-    bool isGrounded()
+    public bool isGrounded()
     {
         bool hit = Physics.CheckSphere(snowboardRef.transform.position, groundDistance, GroundLayerFaggot, QueryTriggerInteraction.Collide);
         Debug.DrawRay(snowboardRef.transform.position, Vector3.down, Color.red, 1);
@@ -56,16 +56,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Clamp player speed
         player.velocity = Vector3.ClampMagnitude(player.velocity, MaxVelocity);
-
-        //Check if player hit ground FROM raycast (can be buggyish, might revamp later)
-        if (!inAir)
-        {
-            Debug.Log("YOUR HITTING THE GROUND");
-        }
-        else
-        {
-            Debug.Log("You're in the air");
-        } 
 
         if (inAir)
         {
