@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Player\WalkingScript.cs" />
     <Compile Include="Assets\Scripts\PointSys\PointSystem.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\SpeedText.cs" />
     <Compile Include="Assets\Scripts\Tricks\Trick.cs" />
     <Compile Include="Assets\Scripts\Tricks\TrickManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
