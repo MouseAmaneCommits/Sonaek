@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 using UnityEngine;
-using UnityEditor.Timeline;
 
 // LAST EDITED ---- Christian Sadykbayev
 public class PlayerMovement : MonoBehaviour
