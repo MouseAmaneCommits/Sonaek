@@ -25,7 +25,7 @@ public class MouseLook : MonoBehaviour
 
         playerBody.Rotate(Vector3.up * mouseX);
 
-        if (!playerMovement.isGrounded())
+        if (!playerMovement.isGrounded() && playerMovement.snowboarding)
         {
             playerBody.Rotate(Vector3.left * mouseY);
         }

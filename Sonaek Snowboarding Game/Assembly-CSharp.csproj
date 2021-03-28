@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollision.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\WalkingScript.cs" />
     <Compile Include="Assets\Scripts\PointSys\PointSystem.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\Tricks\Trick.cs" />

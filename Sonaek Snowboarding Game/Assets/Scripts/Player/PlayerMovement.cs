@@ -27,6 +27,12 @@ public class PlayerMovement : MonoBehaviour
     public GameManager gameManager;
     public Vector3 snowboardCenterOfGravity; // The center of gravity of the snowboard
 
+    public bool snowboarding = true;
+    public WalkingScript walkingScript;
+
+    // Snowboard position offset when switching from walking to snowboarding and vice versa.
+    public Vector3 snowboardOffset;
+
     void Start()
     {
         speed = speedOfSnowboarder;
@@ -51,30 +57,51 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        inAir = !isGrounded();
-
-        // Clamp player speed
-        player.velocity = Vector3.ClampMagnitude(player.velocity, MaxVelocity);
-
-        if (inAir)
+        if (Input.GetKeyDown(KeyCode.F) && !inAir && player.velocity.magnitude <= 1)
         {
-            player.drag = airDrag;
-        }
-        else if (!inAir && isPowersliding)
-        {
-            player.drag = powerslideDrag;
-        }
-        else if (!inAir)
-        {
-            player.drag = groundDrag;
+            // Pick up snowboard
+            if (snowboarding)
+            {
+                player.constraints = RigidbodyConstraints.FreezeRotation;
+                snowboarding = false;
+            }
+            else
+            {
+                player.constraints = RigidbodyConstraints.None;
+                snowboarding = true;
+            }
         }
 
-        Keybinds();
+        if (snowboarding)
+        {
+            inAir = !isGrounded();
+
+            // Clamp player speed
+            player.velocity = Vector3.ClampMagnitude(player.velocity, MaxVelocity);
+
+            if (inAir)
+            {
+                player.drag = airDrag;
+            }
+            else if (!inAir && isPowersliding)
+            {
+                player.drag = powerslideDrag;
+            }
+            else if (!inAir)
+            {
+                player.drag = groundDrag;
+            }
+            Keybinds();
+        }
+        else
+        {
+            walkingScript.Walk();
+        }
     }
 
     void Keybinds()
     {
-        if (Input.GetKey(KeyCode.Space) && !inAir)
+        if (Input.GetKey(KeyCode.Space) && !inAir && snowboarding)
         {
             player.AddForce(Vector3.up * jumpHeight * Time.deltaTime);
         }
@@ -90,26 +117,25 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Alternative way of Turning (NOT mouse controlled)
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && !snowboarding)
         {
             player.AddForce(player.transform.right * turnspeed * Time.deltaTime);
             player.transform.Rotate(0, -turnspeed, 0 * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && !snowboarding)
         {
             player.AddForce(player.transform.right * turnspeed * Time.deltaTime);
             player.transform.Rotate(0, turnspeed, 0 * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && !inAir)
+        if (Input.GetKeyDown(KeyCode.S) && !inAir && snowboarding)
         {
             // Set powersliding to true
             isPowersliding = true;
             animator.SetBool("Powerslide", true);
         }
-
-        else if (Input.GetKeyUp(KeyCode.S))
+        else if (Input.GetKeyUp(KeyCode.S) && snowboarding)
         {
             // Set powersliding to false
             isPowersliding = false;
