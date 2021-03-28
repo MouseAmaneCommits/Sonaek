@@ -4,7 +4,7 @@ using UnityEngine.Scripting;
 using UnityEngine;
 using UnityEditor.Timeline;
 
-// LAST EDITED ---- Ian Botashev
+// LAST EDITED ---- Christian Sadykbayev
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody player; // This is a reference to the player's rigidbody

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e91799f5224ab469a7043f6683ed68, type: 3}
   m_Name: Frontflip
   m_EditorClassIdentifier: 
-  name: Front Flip
+  name: Frontflip
   requiredYSpin: 0
   requiredXSpin: -360
+  pointsReward: 15
+  done: 0
+  counter: 0

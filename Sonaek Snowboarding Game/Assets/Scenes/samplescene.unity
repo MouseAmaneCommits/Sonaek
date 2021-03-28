@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 88, y: 22}
+  m_AnchoredPosition: {x: 81, y: 875}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14547933
@@ -181,11 +181,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 41
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -6806,10 +6806,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tricks:
-  - {fileID: 11400000, guid: 6b933c38c1e708a45b135d13f98f7900, type: 2}
+  - {fileID: 11400000, guid: dcc57ca40125bc3489e3124d43e5d2f0, type: 2}
   - {fileID: 11400000, guid: 5d2fb265a95d5f74c9f776bab210d1ea, type: 2}
+  - {fileID: 11400000, guid: be0b3e850d75a374ea3a08392ab7f578, type: 2}
+  - {fileID: 11400000, guid: cefb3d8b9c8442443b190827ca681657, type: 2}
   playerMovement: {fileID: 1814261695}
   mouseLook: {fileID: 1814261697}
+  pointSystem: {fileID: 1814261698}
 --- !u!4 &1685599620
 Transform:
   m_ObjectHideFlags: 0
@@ -7078,7 +7081,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10000
+  m_Intensity: 5906
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -7119,7 +7122,7 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
   m_ColorTemperature: 5500
   m_UseColorTemperature: 1
@@ -7161,12 +7164,12 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 10000
+  m_Intensity: 5906
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_LightDimmer: 1
-  m_VolumetricDimmer: 1
+  m_VolumetricDimmer: 2.6
   m_LightUnit: 2
   m_FadeDistance: 10000
   m_AffectDiffuse: 1
@@ -7282,7 +7285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059789766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5103621, y: 1.196, z: 1.1760162}
+  m_LocalPosition: {x: 2.5104241, y: 1.196, z: 1.1760162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405591765}

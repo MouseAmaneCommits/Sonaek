@@ -1,17 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
+// Last edited: Christian Sadykbayev
 public class TrickManager : MonoBehaviour
 {
     public List<Trick> tricks;
     public PlayerMovement playerMovement;
     public MouseLook mouseLook;
+    public PointSystem pointSystem;
 
     private float totalYRotation = 0;
     private float totalXRotation = 0;
 
     private bool inAir = false;
+
+    void Start()
+    {
+        foreach(Trick trick in tricks)
+        {
+            trick.counter = 0;
+            trick.done = false;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,10 +40,12 @@ public class TrickManager : MonoBehaviour
 
             foreach (Trick trick in tricks)
             {
-                if ( checkDidTrick(trick) && !trick.done)
+                if ( checkDidTrick(trick) /*&& !trick.done*/)
                 {
-                    Debug.Log("Trick done: " + trick.name);
-                    trick.done = true;
+                    trick.counter += 1;
+                    //Debug.Log("Trick done: " + trick.name);
+                    pointSystem.Points += trick.pointsReward;
+                    //trick.done = true;
                 }
             }
         }
@@ -65,6 +79,12 @@ public class TrickManager : MonoBehaviour
         if ((totalXRotation >= trick.requiredXSpin && numSign == 1) || (totalXRotation <= trick.requiredXSpin && numSign == -1) || trick.requiredXSpin == 0)
         {
             didXSpin = true;
+        }
+    
+        if(didXSpin && didYSpin)
+        {
+            totalXRotation = 0f;
+            totalYRotation = 0f;
         }
 
         return (didXSpin && didYSpin);
