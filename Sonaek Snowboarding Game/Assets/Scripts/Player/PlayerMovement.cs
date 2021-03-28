@@ -66,7 +66,11 @@ public class PlayerMovement : MonoBehaviour
 
                 player.constraints = RigidbodyConstraints.FreezeRotation;
                 snowboarding = false;
+                Quaternion resetRotation = Quaternion.identity;
+                resetRotation.y = transform.rotation.y;
+                transform.rotation = resetRotation;
             }
+            // Getting on snowboard
             else
             {
                 animator.SetBool("pickupSnowboard", false);
