@@ -1,4 +1,46 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=7384 outsize=583 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9677 outsize=6470 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=17611 outsize=8303 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5756 outsize=6007 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13862 outsize=1100 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=10824 outsize=4699 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=39604 outsize=39488 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3612 outsize=1061 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=11234 outsize=257 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=21811 outsize=1157 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6596 outsize=4958 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=25900 outsize=15879 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=24375 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=38618 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=51293 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=36130 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=40179 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16083 outsize=47990 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3607 outsize=3162 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=27979 outsize=26555 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13599 outsize=2134 ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=2567 outsize=142 kw=_NORMALMAP _TERRAIN_INSTANCED_PERPIXEL_NORMAL pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+  api=4 type=1 insize=7774 outsize=5702 kw=DECALS_3RT _NORMALMAP_TANGENT_SPACE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1

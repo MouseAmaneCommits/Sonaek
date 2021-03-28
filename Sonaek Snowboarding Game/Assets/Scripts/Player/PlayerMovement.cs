@@ -62,11 +62,15 @@ public class PlayerMovement : MonoBehaviour
             // Pick up snowboard
             if (snowboarding)
             {
+                animator.SetBool("pickupSnowboard", true);
+
                 player.constraints = RigidbodyConstraints.FreezeRotation;
                 snowboarding = false;
             }
             else
             {
+                animator.SetBool("pickupSnowboard", false);
+
                 player.constraints = RigidbodyConstraints.None;
                 snowboarding = true;
             }
