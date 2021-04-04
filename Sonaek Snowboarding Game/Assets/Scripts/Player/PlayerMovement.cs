@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameManager gameManager;
     public Vector3 snowboardCenterOfGravity; // The center of gravity of the snowboard
+    static Animator anim;
 
     public bool snowboarding = true;
     public WalkingScript walkingScript;
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         speed = speedOfSnowboarder;
-
+        anim = GetComponent<Animator>();
         player.centerOfMass = snowboardCenterOfGravity;
         
     }
@@ -90,14 +91,17 @@ public class PlayerMovement : MonoBehaviour
             if (inAir)
             {
                 player.drag = airDrag;
+                anim.SetBool("inAir", true);
             }
             else if (!inAir && isPowersliding)
             {
                 player.drag = powerslideDrag;
+                anim.SetBool("inAir", false);
             }
             else if (!inAir)
             {
                 player.drag = groundDrag;
+                anim.SetBool("inAir", false);
             }
             Keybinds();
         }
@@ -111,7 +115,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && !inAir && snowboarding)
         {
+            anim.SetTrigger("isJumping");
             player.AddForce(Vector3.up * jumpHeight * Time.deltaTime);
+
         }
         // Move Forward
         if (Input.GetKey(KeyCode.W) && !inAir && !isPowersliding)
