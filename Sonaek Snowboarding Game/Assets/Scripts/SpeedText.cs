@@ -10,6 +10,13 @@ public class SpeedText : MonoBehaviour
 
     void Update()
     {
-        text.text = "Speed: " + Mathf.Round(player.velocity.magnitude);    
+#if DEBUG
+        UpdateText(Mathf.Round(player.velocity.magnitude));
+#endif
+    }
+
+    void UpdateText(float t)
+    {
+        text.text = "Speed: " + t;
     }
 }

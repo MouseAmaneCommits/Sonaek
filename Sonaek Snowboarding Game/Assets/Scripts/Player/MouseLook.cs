@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-// Last Edited: Ian Botashev
+// Last Edited: Christian Sadykbayev
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity;
@@ -20,8 +20,8 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = GetMouseX();
+        float mouseY = GetMouseY();
 
         playerBody.Rotate(Vector3.up * mouseX);
 
@@ -29,5 +29,15 @@ public class MouseLook : MonoBehaviour
         {
             playerBody.Rotate(Vector3.left * mouseY);
         }
+    }
+
+    public float GetMouseX()
+    {
+        return Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+    }
+
+    public float GetMouseY()
+    {
+        return Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
     }
 }

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     {
         isAlive = false;
 
-        var scripts = player.GetComponents(typeof(MonoBehaviour));
+        Component[] scripts = player.GetComponents(typeof(MonoBehaviour));
         foreach (MonoBehaviour script in scripts)
         {
             script.enabled = false;

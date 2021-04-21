@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Last edited by Ian
+// Last edited by Christian Sadykbayev
 public class PlayerCollision : MonoBehaviour
 {
     public Rigidbody rb;
@@ -21,7 +21,7 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Multiplying by 1000 cause fuck you
+        // Multiplying by 1000 cause yes
         if (collision.gameObject.tag == "Obstacle" && rb.GetRelativePointVelocity(rb.transform.forward).z*1000 >= velocityThreshold && pm.snowboarding)
         {
             Vector3 dir = collision.contacts[0].point - transform.position;
